@@ -31,13 +31,13 @@ Delivered as a Pandas `DataFrame`, with clear typing and minimal preprocessing r
 ### Pandas Example
 
 ```
-			name	birth	death	term_start	term_end		party			election	vice_president
-number								
-43	George W. Bush	1946	<NA>	2001-01-20	2009-01-20	[Republican]	[2000, 2004]	[Dick Cheney]
-44	Barack Obama	1961	<NA>	2009-01-20	2017-01-20	[Democratic]	[2008, 2012]	[Joe Biden]
-45	Donald Trump	1946	<NA>	2017-01-20	2021-01-20	[Republican]	[2016]			[Mike Pence]
-46	Joe Biden		1942	<NA>	2021-01-20	2025-01-20	[Democratic]	[2020]			[Kamala Harris]
-47	Donald Trump	1946	<NA>	2025-01-20			NaT	[Republican]	[2024]			[JD Vance]
+            name     birth    death    term_start      term_end            party        election    vice_president
+number                                
+43  George W. Bush    1946     <NA>    2001-01-20    2009-01-20     [Republican]    [2000, 2004]    [Dick Cheney]
+44  Barack Obama      1961     <NA>    2009-01-20    2017-01-20     [Democratic]    [2008, 2012]    [Joe Biden]
+45  Donald Trump      1946     <NA>    2017-01-20    2021-01-20     [Republican]    [2016]          [Mike Pence]
+46  Joe Biden         1942     <NA>    2021-01-20    2025-01-20     [Democratic]    [2020]          [Kamala Harris]
+47  Donald Trump      1946     <NA>    2025-01-20           NaT     [Republican]    [2024]          [JD Vance]
 ```
 
 ## 💾 Data Storage
