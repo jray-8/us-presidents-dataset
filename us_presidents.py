@@ -17,7 +17,7 @@ from pathlib import Path
 URL = 'https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States'
 
 # URL to my GitHub-hosted 'stable' version of the CSV dataset
-FROZEN_CSV_URL = 'my.repo'
+FROZEN_CSV_URL = 'https://raw.githubusercontent.com/jray-8/us-presidents-dataset/main/data/us_presidents_2025.csv'
 
 # What we will write to CSV to indicate missing values (pd.NA)
 NA_REPR = 'NA'
@@ -184,7 +184,7 @@ def list_to_pipe_string(lst):
 	if not lst:
 		return pd.NA
 	if isinstance(lst, list):
-		return ' | '.join('NA' if pd.isna(item) else str(item) for item in lst)
+		return ' | '.join(NA_REPR if pd.isna(item) else str(item) for item in lst)
 	return lst
 
 def pipe_string_to_list(s):
@@ -192,7 +192,7 @@ def pipe_string_to_list(s):
 	if pd.isna(s):
 		return [pd.NA]
 	if isinstance(s, str):
-		return [pd.NA if item.strip() == 'NA' else item.strip() for item in s.split('|')]
+		return [pd.NA if item.strip() == NA_REPR else item.strip() for item in s.split('|')]
 	return s
 
 def save_csv(df, filename, output=None):
@@ -233,11 +233,11 @@ def save_csv(df, filename, output=None):
 	
 	# Save CSV with 'NA' for nulls
 	# Use UTF-8 BOM so Excel can correctly display Unicode characters
-	df_temp.to_csv(output_path, na_rep='NA', encoding='utf-8-sig')
+	df_temp.to_csv(output_path, na_rep=NA_REPR, encoding='utf-8-sig')
 
 def load_csv(filepath):
 	''' Loads and restores the DataFrame from a saved CSV file. '''
-	df = pd.read_csv(filepath, index_col=0, na_values='NA')
+	df = pd.read_csv(filepath, index_col=0, na_values=NA_REPR)
 
 	# Convert datetime strings back to datetime objects
 	for col in DATETIME_COLS:
