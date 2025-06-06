@@ -97,9 +97,9 @@ The main utilities are:
 
 Explore the `notebooks/` folder to see how the dataset was created and how it can be used.
 
-- `cleaning_walkthrough.ipynb` – full tutorial on how the data was scraped, parsed, and cleaned
+- `cleaning_walkthrough.ipynb` – full tutorial on how the data was scraped, parsed, and cleaned.
 
-- `presidents_eda.ipynb` – examples of exploratory data analysis, using the dataset to answer real questions
+- `presidential_age_eda.ipynb` – exploratory data analysis, using the dataset to answer real questions about the trend of president ages at inauguration.
 
 You can launch them with:
 
